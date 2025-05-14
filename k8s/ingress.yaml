@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-python-app
+spec:
+  rules:
+  # Add DNS name, esto se tiene que agregar en el arhcivo host donde se pone 127.0.0.1 antes de la url para cambiarle el nombre al localhost
+  - host: "python-app.test.com" 
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-python-app
+            port:
+              number: 8080
