@@ -22,4 +22,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: mfumiatti/python-app:${GITHUB_SHA::6}
+          tags: mfumiatti/python-app:${{ github.sha }}
